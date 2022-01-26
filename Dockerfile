@@ -15,13 +15,14 @@ RUN dpkg --add-architecture armhf && \
 	libsdl-mixer1.2-dev:armhf \
 	libsdl-ttf2.0-dev:armhf \
 	libpng-dev:armhf \
+	nano vim git \
   && rm -rf /var/lib/apt/lists/*
 
 RUN mkdir -p /root/workspace
 WORKDIR /root
 
-COPY my283/include /usr/include/
-COPY my283/lib /usr/lib/
+COPY my283/include /usr/local/include/
+COPY my283/lib /usr/local/lib/
 
 COPY setup-env.sh .
 RUN cat setup-env.sh >> .bashrc
