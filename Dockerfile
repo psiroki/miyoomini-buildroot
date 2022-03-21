@@ -15,7 +15,7 @@ RUN dpkg --add-architecture armhf && \
 	libsdl-mixer1.2-dev:armhf \
 	libsdl-ttf2.0-dev:armhf \
 	libpng-dev:armhf \
-	nano vim git \
+	nano vim git curl wget unzip \
   && rm -rf /var/lib/apt/lists/*
 
 RUN mkdir -p /root/workspace
