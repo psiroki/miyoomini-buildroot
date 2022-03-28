@@ -15,14 +15,17 @@ RUN dpkg --add-architecture armhf && \
 	libsdl-mixer1.2-dev:armhf \
 	libsdl-ttf2.0-dev:armhf \
 	libpng-dev:armhf \
+        libfreetype6-dev:armhf \
+	nano vim git curl wget unzip \
   && rm -rf /var/lib/apt/lists/*
 
-RUN mkdir -p /root/workspace
+RUN mkdir -p /root/workspace; ln -s /usr/local/include /usr/include/sdkdir
 WORKDIR /root
 
-COPY my283/include /usr/include/
+COPY my283/include /usr/local/include/
 COPY my283/lib /usr/lib/
-
+COPY cross-compile-ldd /usr/bin/arm-linux-gnueabihf-ldd
+COPY freetype-config /usr/bin/freetype-config
 COPY setup-env.sh .
 RUN cat setup-env.sh >> .bashrc
 
