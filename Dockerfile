@@ -33,4 +33,10 @@ RUN cat setup-env.sh >> .bashrc
 VOLUME /root/workspace
 WORKDIR /root/workspace
 
+ENV CROSS_COMPILE=/usr/bin/arm-linux-gnueabihf-
+ENV PREFIX=/usr
+ENV PKG_CONFIG_PATH=/usr/lib/arm-linux-gnueabihf/pkgconfig/:/usr/local/lib/pkgconfig/
+ENV CC="arm-linux-gnueabihf-gcc"
+ENV CXX="arm-linux-gnueabihf-g++"
+
 CMD ["/bin/bash"]
