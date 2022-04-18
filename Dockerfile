@@ -23,6 +23,7 @@ RUN mkdir -p /root/workspace; ln -s /usr/local/include /usr/include/sdkdir
 WORKDIR /root
 
 COPY my283/include /usr/local/include/
+COPY my283/include /usr/include/
 COPY my283/lib /usr/lib/
 COPY cross-compile-ldd /usr/bin/arm-linux-gnueabihf-ldd
 COPY freetype-config /usr/bin/freetype-config
