@@ -16,7 +16,7 @@ RUN dpkg --add-architecture armhf && \
 	libsdl-ttf2.0-dev:armhf \
 	libpng-dev:armhf \
         libfreetype6-dev:armhf \
-	nano vim git curl wget unzip \
+	nano vim git curl wget unzip cmake \
   && rm -rf /var/lib/apt/lists/*
 
 RUN mkdir -p /root/workspace; ln -s /usr/local/include /usr/include/sdkdir
